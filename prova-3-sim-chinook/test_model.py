@@ -1,0 +1,20 @@
+from model.model import Model
+
+
+def main():
+    model = Model()
+
+    c=1
+
+    print(f"Costruisco il grafo con c = {c}...")
+    model.build_graph(c)
+    n_nodi, n_archi = model.get_stats()
+    print(f" il grafo creato contiene {n_nodi} nodes e {n_archi} edges")
+
+    s, k = model.connesse()
+    print(f"Il numero di componenti connesse è {s} e la più grande è {k}:")
+    poiu = model.getArchiPesoMaggiore()
+    for n in poiu[:5]:
+        print(f" {n}")
+if __name__ == "__main__":
+    main()
